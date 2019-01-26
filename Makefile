@@ -13,7 +13,7 @@ OVERRIDE_ASSETS = $(shell find assets/override -type d 2> /dev/null) $(shell fin
 MM_UTILITIES_DIR = ../mattermost-utilities
 
 node_modules: package.json
-	@if ! [ $(shell which npm 2> /dev/null) ]; then \
+	@if ! [ "$(shell which npm 2> /dev/null)" ]; then \
 		echo "npm is not installed https://npmjs.com"; \
 		exit 1; \
 	fi
@@ -22,7 +22,7 @@ node_modules: package.json
 	@npm install
 
 npm-ci: package.json
-	@if ! [ $(shell which npm 2> /dev/null) ]; then \
+	@if ! [ "$(shell which npm 2> /dev/null)" ]; then \
 		echo "npm is not installed https://npmjs.com"; \
 		exit 1; \
 	fi
